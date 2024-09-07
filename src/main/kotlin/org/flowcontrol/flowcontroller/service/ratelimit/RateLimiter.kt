@@ -27,7 +27,7 @@ class RateLimiter(
             redisTemplate.opsForValue().increment(rateLimitKey, 1) ?: 0L
 
         if (current == 1L) {
-            redisTemplate.expire(key, TIME_WINDOW)
+            redisTemplate.expire(rateLimitKey, TIME_WINDOW)
         }
 
         return current <= REQUEST_LIMIT
