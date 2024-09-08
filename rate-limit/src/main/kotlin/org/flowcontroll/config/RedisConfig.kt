@@ -1,4 +1,4 @@
-package org.flowcontrol.flowcontroller.config
+package org.flowcontroll.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

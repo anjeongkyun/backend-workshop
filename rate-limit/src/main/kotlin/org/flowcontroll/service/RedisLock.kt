@@ -1,4 +1,4 @@
-package org.flowcontrol.flowcontroller.service.ratelimit
+package org.flowcontroll.service
 
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.stereotype.Component

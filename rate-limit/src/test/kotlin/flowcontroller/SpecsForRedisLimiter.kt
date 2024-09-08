@@ -1,4 +1,4 @@
-package org.flowcontrol.flowcontroller
+package flowcontroller
 
 import org.flowcontrol.flowcontroller.service.ratelimit.RateLimiter
 import org.junit.jupiter.api.Assertions.assertFalse

@@ -1,4 +1,4 @@
-package org.flowcontrol.flowcontroller
+package flowcontroller
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.springframework.beans.factory.annotation.Autowired

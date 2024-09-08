@@ -1,6 +1,6 @@
-package org.flowcontrol.flowcontroller.controller
+package org.flowcontroll.controller
 
-import org.flowcontrol.flowcontroller.service.ratelimit.RateLimiter
+import org.flowcontroll.service.RateLimiter
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping

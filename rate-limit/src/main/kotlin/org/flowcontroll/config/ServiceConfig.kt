@@ -1,6 +1,6 @@
-package org.flowcontrol.flowcontroller.config
+package org.flowcontroll.config
 
-import org.flowcontrol.flowcontroller.service.ratelimit.RateLimiter
+import org.flowcontroll.service.RateLimiter
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.redis.core.RedisTemplate
