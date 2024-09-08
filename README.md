@@ -7,5 +7,4 @@
 
 ### Rate Limit
 * Redis를 이용한 Rate-Limiter 구현
-
-
+* Bucket4j를 이용한 Rate-Limiter 구현
