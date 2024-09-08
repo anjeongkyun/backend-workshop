@@ -3,9 +3,9 @@ package org.flowcontroll.service
 import org.springframework.data.redis.core.RedisTemplate
 import java.time.Duration
 
-class RateLimiter(
+class RedisRateLimiter(
     private val redisTemplate: RedisTemplate<String, String>,
-) {
+) : RateLimit {
     @Suppress("ktlint:standard:property-naming")
     // 허용되는 최대 요청 수
     private val REQUEST_LIMIT = 5L
@@ -21,7 +21,7 @@ class RateLimiter(
      * @param key 제한을 적용할 식별자 (예: 사용자 ID, IP 주소)
      * @return 요청 허용 여부
      */
-    fun isAllowed(key: String): Boolean {
+    override fun isAllowed(key: String): Boolean {
         val rateLimitKey = "$RATE_LIMIT_PREFIX:$key"
         val current =
             redisTemplate.opsForValue().increment(rateLimitKey, 1) ?: 0L
