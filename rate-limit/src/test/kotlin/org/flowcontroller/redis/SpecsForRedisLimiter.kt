@@ -1,6 +1,6 @@
-package flowcontroller
+package org.flowcontroller.redis
 
-import org.flowcontrol.flowcontroller.service.ratelimit.RateLimiter
+import org.flowcontroll.service.RedisRateLimiter
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
@@ -14,13 +14,13 @@ import java.util.*
 class SpecsForRedisLimiter {
     private lateinit var redisTemplate: RedisTemplate<String, String>
     private lateinit var valueOperations: ValueOperations<String, String>
-    private lateinit var sut: RateLimiter
+    private lateinit var sut: RedisRateLimiter
 
     @BeforeEach
     fun setUp() {
         redisTemplate = mock(RedisTemplate::class.java) as RedisTemplate<String, String>
         valueOperations = mock(ValueOperations::class.java) as ValueOperations<String, String>
-        sut = RateLimiter(redisTemplate)
+        sut = RedisRateLimiter(redisTemplate)
 
         `when`(redisTemplate.opsForValue()).thenReturn(valueOperations)
     }
