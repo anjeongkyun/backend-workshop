@@ -3,3 +3,4 @@ plugins {
 }
 rootProject.name = "backend-workshop"
 include("rate-limit")
+include("load-test")
