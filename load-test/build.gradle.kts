@@ -6,7 +6,7 @@ plugins {
     kotlin("plugin.jpa") version "1.8.20"
 }
 
-group = "org.workshop.load-test"
+group = "org.workshop.concurrency-control"
 version = "0.0.1-SNAPSHOT"
 
 repositories {

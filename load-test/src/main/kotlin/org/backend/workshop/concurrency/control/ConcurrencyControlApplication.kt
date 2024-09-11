@@ -1,11 +1,11 @@
-package org.backend.workshop.loadtest
+package org.backend.workshop.concurrency.control
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class LoadTestApplication
+class ConcurrencyControlApplication
 
 fun main(args: Array<String>) {
-    runApplication<LoadTestApplication>(*args)
+    runApplication<ConcurrencyControlApplication>(*args)
 }
