@@ -3,7 +3,7 @@
 package org.backend.workshop.concurrency.control.datamodel
 
 import jakarta.persistence.*
-import org.backend.workshop.concurrency.control.service.PlaceOrderCommand
+import org.backend.workshop.concurrency.control.dto.PlaceOrderCommand
 
 @Entity
 @Table(name = "orders")
@@ -15,7 +15,7 @@ data class OrderDataModel(
     @JoinColumn(name = "product_id", nullable = false)
     val product: ProductDataModel,
     @Column(nullable = false)
-    val quantity: Int,
+    val quantity: Long,
     @Column(nullable = false)
     val totalPrice: Double,
 ) {

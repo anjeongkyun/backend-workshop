@@ -14,13 +14,19 @@ data class ProductDataModel(
     val name: String,
     @Column(nullable = false)
     val price: Double,
-    @OneToOne(mappedBy = "product")
-    val stock: StockDataModel? = null,
+    @Column(nullable = false)
+    val quantity: Long,
 ) {
+    fun decreaseQuantity(quantity: Long): ProductDataModel {
+        require(quantity > 0) { "Quantity must be greater than 0" }
+        require(this.quantity >= quantity) { "Not enough quantity" }
+        return this.copy(quantity = this.quantity - quantity)
+    }
+
     fun toModel(): ProductDataModel =
         ProductDataModel(
             name = this.name,
             price = this.price,
-            stock = this.stock?.toModel(),
+            quantity = this.quantity,
         )
 }
