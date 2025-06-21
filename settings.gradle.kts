@@ -4,3 +4,5 @@ plugins {
 rootProject.name = "backend-workshop"
 include("rate-limit")
 include("concurrency-control")
+include("mongo-transaction")
+
