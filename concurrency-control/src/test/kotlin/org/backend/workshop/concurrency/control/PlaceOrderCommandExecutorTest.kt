@@ -28,10 +28,6 @@ class PlaceOrderCommandExecutorTest {
     @ParameterizedTest
     fun `should place orders concurrently`(product: ProductDataModel) {
         val saved = productJpaRepository.saveAndFlush(product.copy(id = null, quantity = 100L))
-        val a =
-            productJpaRepository
-                .findById(saved.id!!)
-
         val sut =
             PlaceOrderCommandExecutor(
                 orderJpaRepository = orderJpaRepository,
